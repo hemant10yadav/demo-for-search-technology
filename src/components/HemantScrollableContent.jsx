@@ -44,7 +44,7 @@ export const HemantScrollableContent = ({
         ))}
       </div>
       <div className="text-center my-4 opacity-75">
-        <FontAwesomeIcon icon={faAngleUp} />
+        <FontAwesomeIcon className="seemless text-primary" icon={faAngleUp} />
         <p>
           <small>Scroll for a seamless experience</small>
         </p>

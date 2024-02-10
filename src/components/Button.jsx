@@ -12,7 +12,7 @@ export const Button = ({
   btnClass =
     btnClass +
     (light
-      ? " text-primary border-primary gap-1"
+      ? " text-primary border-primary gap-1 light-button"
       : " gradient text-light gap-3") +
     (centerElements ? " justify-content-center" : " justify-content-between");
   return (

@@ -67,3 +67,14 @@
 .bg-app-dark {
   background: rgba(11, 27, 69, 1);
 }
+
+.app-t {
+  background: -webkit-linear-gradient(#eee, #f36525);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.light-button:hover {
+  border: 2px solid #f36525 !important;
+  color: #f36525 !important;
+}

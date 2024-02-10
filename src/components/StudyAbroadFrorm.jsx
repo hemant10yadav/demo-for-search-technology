@@ -7,15 +7,15 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { HemantScrollableContent } from "./HemantScrollableContent";
 import { Button } from "./Button";
-import { COUNTRIES, COURSES, FORM_OPTIONS } from "../constatnts";
+import { COUNTRIES, COURSES, FORM_OPTIONS } from "../constants";
 import { useState } from "react";
 import { Input } from "./Input";
 
 export const StudyAbroadForm = ({ formState, setFormState }) => {
-  let optionClass = "px-4 g-3 mt-4 row";
+  let optionClass = "mx-4 g-3 mt-4 row";
   const [selectedWidgetIndex, setSelectedWidgetIndex] = useState(1);
   const handleCLick = (back) => {
-    if (formState >= 0 || formState < FORM_OPTIONS.length) {
+    if (formState >= 0 && formState < FORM_OPTIONS.length) {
       setFormState(back === true ? --formState : ++formState);
     }
   };
@@ -29,14 +29,18 @@ export const StudyAbroadForm = ({ formState, setFormState }) => {
       <div>
         {[0, 1].includes(formState) && (
           <div className="mx-3">
-            {formState == 0 && (
+            {formState === 0 && (
               <div className="text-center fs-4 fw-bold">
-                <FontAwesomeIcon className="app-text" icon={faHandsClapping} />,
-                select your dream country to study abroad
+                Hi
+                <FontAwesomeIcon
+                  className="app-text mx-1"
+                  icon={faHandsClapping}
+                />
+                , select your dream country to study abroad
               </div>
             )}
 
-            {formState == 1 && (
+            {formState === 1 && (
               <div className="text-center">
                 <div>
                   <FontAwesomeIcon
@@ -55,7 +59,7 @@ export const StudyAbroadForm = ({ formState, setFormState }) => {
               <HemantScrollableContent
                 selectedWidgetIndex={selectedWidgetIndex}
                 setSelectedWidgetIndex={setSelectedWidgetIndex}
-                widgetData={formState == 0 ? COUNTRIES : COURSES}
+                widgetData={formState === 0 ? COUNTRIES : COURSES}
                 handleCLick={handleCLick}
               />
             </div>
@@ -69,7 +73,7 @@ export const StudyAbroadForm = ({ formState, setFormState }) => {
             </p>
             <div
               className={
-                formState == 5
+                formState === 5
                   ? optionClass + " row-cols-1"
                   : optionClass + " row-cols-2"
               }
@@ -81,7 +85,7 @@ export const StudyAbroadForm = ({ formState, setFormState }) => {
                     title={opt.title}
                     icon={opt?.icon}
                     light={true}
-                    centerElements={formState != 5}
+                    centerElements={formState !== 5}
                   />
                 </div>
               ))}
@@ -89,7 +93,7 @@ export const StudyAbroadForm = ({ formState, setFormState }) => {
           </div>
         )}
 
-        {formState == 7 && (
+        {formState === 7 && (
           <div className="mx-3 pb-5">
             <p className="fs-3 fw-bolder text-center">
               Cheers! You're just one step away from getting started &#129321;
@@ -107,16 +111,25 @@ export const StudyAbroadForm = ({ formState, setFormState }) => {
       </div>
 
       <div className="d-flex gap-5 mt-5 align-items-center px-3">
-        <div
-          className="d-flex gap-3 align-items-center cursor-pointer"
-          onClick={() => handleCLick(true)}
-        >
-          <FontAwesomeIcon className="fs-3" icon={faArrowLeft} />
-          <span className="fw-bold">Back</span>
-        </div>
+        {formState > 0 && (
+          <div
+            className="d-flex gap-3 align-items-center cursor-pointer"
+            onClick={() => handleCLick(true)}
+          >
+            <FontAwesomeIcon className="fs-3" icon={faArrowLeft} />
+            <span className="fw-bold">Back</span>
+          </div>
+        )}
+
         <div className="flex-grow-1">
           <Button
-            title="Continue"
+            title={
+              [2, 3, 5].includes(formState)
+                ? "Next"
+                : formState === FORM_OPTIONS.length
+                ? "Start Journey"
+                : "Continue"
+            }
             handleCLick={() => handleCLick(false)}
             icon={faArrowRight}
           ></Button>

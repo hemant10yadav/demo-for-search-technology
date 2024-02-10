@@ -35,31 +35,31 @@ export const WhatToGetWidgetData = [
 export const COUNTRIES = [
   {
     name: "Canada",
-    flag: "none",
+    flag: "ca",
   },
   {
     name: "UK",
-    flag: "none",
+    flag: "gb",
   },
   {
     name: "US",
-    flag: "none",
+    flag: "us",
   },
   {
     name: "Mexico",
-    flag: "none",
+    flag: "mx",
   },
   {
     name: "India",
-    flag: "none",
+    flag: "in",
   },
   {
     name: "Brazil",
-    flag: "none",
+    flag: "br",
   },
   {
     name: "Spain",
-    flag: "none",
+    flag: "es",
   },
 ];
 

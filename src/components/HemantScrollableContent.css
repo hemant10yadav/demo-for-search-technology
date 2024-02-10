@@ -9,3 +9,16 @@
 .scrollDiv::-webkit-scrollbar {
   display: none;
 }
+
+.seemless {
+  animation: up-down 1.2s infinite ease;
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}

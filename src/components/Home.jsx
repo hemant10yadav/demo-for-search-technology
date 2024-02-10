@@ -1,19 +1,19 @@
 import { Button } from "./Button";
 import ukLogo from "../assets/img/uk.png";
-import { WhatToGetWidgetData } from "../constatnts";
+import { WhatToGetWidgetData } from "../constants";
 import { WhatToGetWidget } from "./WhatToGetWidget";
 import { EducationDetail } from "./EducationDetail";
 
 export const Home = () => {
   return (
-    <div className="pb-5">
+    <div className="pb-5 bg-light">
       <div className="pb-5">
         <section className="mx-2 mt-3 mb-4">
-          <h1 id="jakub" className="app-text fw-bolder ts-2">
+          <h1 className="app-t fw-bolder ts-2">
             <span>Take the first step towards your Masters in Uk</span>
             <img className="ms-2" height="40" src={ukLogo} alt="ukLogo" />
           </h1>
-          <h6 className="mt-2 ts-1 app-secondary-text fw-bold">
+          <h6 className="mt-2 app-secondary-text fw-bold">
             Take the first step towards your study abroad journey
           </h6>
         </section>
