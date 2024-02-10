@@ -3,8 +3,6 @@
 }
 
 .perfect-circle {
-  position: absolute;
-  top: 50%;
   height: 15px;
   width: 15px;
   border-radius: 50%;
@@ -25,5 +23,58 @@ hr {
 }
 
 .fs-12 {
-    font-size: 12px;
+  font-size: 12px;
+}
+
+@keyframes movePlaneToMiddle {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+
+.move-to-middle {
+  transform: translate(50%, -50%);
+  animation: movePlaneToMiddle 1.2s ease;
+  z-index: 101;
+  left: 50%;
+}
+
+.left {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.move-to-start {
+  transform: translate(-50%, -50%);
+  animation: movePlaneToStart 1.2s ease;
+  z-index: 101;
+  left: 0%;
+}
+
+@keyframes movePlaneToStart {
+  0% {
+    left: -30%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+.move-to-right {
+  transform: translate(-50%, -50%);
+  animation: movePlaneToRight 1.2s ease;
+  z-index: 101;
+  left: 100%;
+}
+
+@keyframes movePlaneToRight {
+  0% {
+    left: 50%;
+  }
+  100% {
+    left: 100%;
+  }
 }

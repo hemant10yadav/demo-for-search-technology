@@ -8,6 +8,7 @@ export const HemantScrollableContent = ({
   widgetData,
   selectedWidgetIndex,
   setSelectedWidgetIndex,
+  handleCLick
 }) => {
   const scrollDivRef = useRef(null);
 
@@ -38,6 +39,7 @@ export const HemantScrollableContent = ({
             key={data.name}
             widgetData={data}
             selected={index === selectedWidgetIndex}
+            handleCLick={handleCLick}
           />
         ))}
       </div>

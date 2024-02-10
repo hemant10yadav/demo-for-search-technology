@@ -1,18 +1,18 @@
 import "./Input.css";
 
-export const Input = ({ label, type, ...childrens }) => {
+export const Input = ({ type, label, ...props }) => {
   return (
-    <div class="form__group field">
+    <div className="form__group field w-100">
       <input
         type={type}
-        class="form__field"
+        className="form__field"
         placeholder={label}
         name={label}
         id={label}
         required
-        childrens
+        {...props}
       />
-      <label for="name" class="form__label">
+      <label htmlFor={label} className="form__label">
         {label}
       </label>
     </div>

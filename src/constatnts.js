@@ -114,7 +114,7 @@ export const FORM_OPTIONS = [
     ],
   },
   {
-    title: "Yorr English exam status?",
+    title: "Your English exam status?",
     options: [
       { title: "Not decided", icon: faArrowRight },
       { title: "Already gave the exam", icon: faArrowRight },

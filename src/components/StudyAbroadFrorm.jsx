@@ -14,8 +14,10 @@ import { Input } from "./Input";
 export const StudyAbroadForm = ({ formState, setFormState }) => {
   let optionClass = "px-4 g-3 mt-4 row";
   const [selectedWidgetIndex, setSelectedWidgetIndex] = useState(1);
-  const handleCLick = () => {
-    setFormState(++formState);
+  const handleCLick = (back) => {
+    if (formState >= 0 || formState < FORM_OPTIONS.length) {
+      setFormState(back === true ? --formState : ++formState);
+    }
   };
 
   const handleSubmit = (e) => {
@@ -54,13 +56,14 @@ export const StudyAbroadForm = ({ formState, setFormState }) => {
                 selectedWidgetIndex={selectedWidgetIndex}
                 setSelectedWidgetIndex={setSelectedWidgetIndex}
                 widgetData={formState == 0 ? COUNTRIES : COURSES}
+                handleCLick={handleCLick}
               />
             </div>
           </div>
         )}
 
         {[2, 3, 4, 5, 6].includes(formState) && (
-          <div style={{ minHeight: "256px" }}>
+          <div style={{ minHeight: "430px" }}>
             <p className="text-center mx-3 mt-4">
               {FORM_OPTIONS[formState].title}
             </p>
@@ -87,28 +90,34 @@ export const StudyAbroadForm = ({ formState, setFormState }) => {
         )}
 
         {formState == 7 && (
-          <div className="mx-3">
-            <p className="fs-3 fw-bolder">
-              Cheers! You're just one step away fro getting started &#129321;
+          <div className="mx-3 pb-5">
+            <p className="fs-3 fw-bolder text-center">
+              Cheers! You're just one step away from getting started &#129321;
             </p>
-            <form onSubmit={handleSubmit}>
-              <Input type="text" label="Name" />
-              <Input type="email" label="Email" />
-              <Input type="number" label="Phone Number" />
+            <form
+              className="mt-5 d-flex flex-column gap-3"
+              onSubmit={handleSubmit}
+            >
+              <Input label="Name" type="text" />
+              <Input label="Email" type="email" />
+              <Input label="Phone Number" type="number" />
             </form>
           </div>
         )}
       </div>
 
       <div className="d-flex gap-5 mt-5 align-items-center px-3">
-        <div className="d-flex gap-3 align-items-center">
+        <div
+          className="d-flex gap-3 align-items-center cursor-pointer"
+          onClick={() => handleCLick(true)}
+        >
           <FontAwesomeIcon className="fs-3" icon={faArrowLeft} />
           <span className="fw-bold">Back</span>
         </div>
         <div className="flex-grow-1">
           <Button
             title="Continue"
-            handleCLick={handleCLick}
+            handleCLick={() => handleCLick(false)}
             icon={faArrowRight}
           ></Button>
         </div>

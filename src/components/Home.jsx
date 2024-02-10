@@ -14,9 +14,8 @@ export const Home = () => {
             <img className="ms-2" height="40" src={ukLogo} alt="ukLogo" />
           </h1>
           <h6 className="mt-2 ts-1 app-secondary-text fw-bold">
-            Take the first step towards your study abroad jorney
+            Take the first step towards your study abroad journey
           </h6>
-          {/* <hr className="my-4" /> */}
         </section>
 
         <section className="bg-whatToget text-white pt-4 pb-5 px-2">
