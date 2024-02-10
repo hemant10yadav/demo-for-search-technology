@@ -1,21 +1,23 @@
 import { useState, useEffect, useRef } from "react";
 import { FormWidget } from "./FormWidget";
 import "./HemantScrollableContent.css";
-import { COUNTRIES } from "../constatnts";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
-export const HemantScrollableContent = () => {
-  const [selectedWidgetIndex, setSelectedWidgetIndex] = useState(1);
+export const HemantScrollableContent = ({
+  widgetData,
+  selectedWidgetIndex,
+  setSelectedWidgetIndex,
+}) => {
   const scrollDivRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollDiv = scrollDivRef.current;
-      const widgetHeight = scrollDiv.scrollHeight / (COUNTRIES.length + 3);
+      const widgetHeight = scrollDiv.scrollHeight / (widgetData.length + 3);
       const centerIndex = Math.round(scrollDiv.scrollTop / widgetHeight);
 
       setSelectedWidgetIndex(centerIndex);
-      const newScrollTop =
-        centerIndex * widgetHeight - scrollDiv.clientHeight / 2;
     };
 
     const scrollDiv = scrollDivRef.current;
@@ -26,17 +28,25 @@ export const HemantScrollableContent = () => {
     };
   }, []);
   return (
-    <div
-      ref={scrollDivRef}
-      className="scrollDiv d-flex align-items-center flex-column gap-4 py-3"
-    >
-      {COUNTRIES.map((country, index) => (
-        <FormWidget
-          key={country.name}
-          widgetData={country}
-          selected={index === selectedWidgetIndex}
-        />
-      ))}
+    <div>
+      <div
+        ref={scrollDivRef}
+        className="scrollDiv d-flex align-items-center flex-column gap-4 py-3"
+      >
+        {widgetData.map((data, index) => (
+          <FormWidget
+            key={data.name}
+            widgetData={data}
+            selected={index === selectedWidgetIndex}
+          />
+        ))}
+      </div>
+      <div className="text-center my-4 opacity-75">
+        <FontAwesomeIcon icon={faAngleUp} />
+        <p>
+          <small>Scroll for a seamless experience</small>
+        </p>
+      </div>
     </div>
   );
 };

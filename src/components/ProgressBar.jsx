@@ -2,7 +2,7 @@ import "./ProgressBar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlaneDeparture } from "@fortawesome/free-solid-svg-icons";
 
-export const ProgressBar = () => {
+export const ProgressBar = ({ formState }) => {
   return (
     <section className="position-relative pt-5 mx-5 progress-box">
       <hr className="my-0 position-absolute top-50 start-0 translate-middle-y w-100"></hr>

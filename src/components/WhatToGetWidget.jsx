@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const WhatToGetWidget = ({ widgetData }) => {
-  console.log(widgetData);
   return (
     <section className="border border-2 rounded-3 whatToGetWidget">
       <div

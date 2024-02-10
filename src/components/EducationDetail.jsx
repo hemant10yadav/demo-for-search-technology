@@ -1,19 +1,17 @@
-import {
-  faHandsClapping,
-  faPlaneDeparture,
-} from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 import "./EducationDetail.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ProgressBar } from "./ProgressBar";
 import { StudyAbroadForm } from "./StudyAbroadFrorm";
 export const EducationDetail = () => {
+  const [formState, setFormState] = useState(0);
+
   return (
     <div>
       <section>
-        <ProgressBar />
+        <ProgressBar formState={formState} />
       </section>
-      <section className="px-5 mt-4">
-        <StudyAbroadForm />
+      <section className="mt-4">
+        <StudyAbroadForm formState={formState} setFormState={setFormState} />
       </section>
     </div>
   );
