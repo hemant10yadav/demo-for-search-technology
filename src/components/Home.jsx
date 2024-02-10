@@ -6,9 +6,9 @@ import { EducationDetail } from "./EducationDetail";
 
 export const Home = () => {
   return (
-    <div className="pb-5 bg-light">
+    <div className="bg-light">
       <div className="pb-5">
-        <section className="mx-2 mt-3 mb-4">
+        <section className="mx-2 pt-3 mb-4">
           <h1 className="app-t fw-bolder ts-2">
             <span>Take the first step towards your Masters in Uk</span>
             <img className="ms-2" height="40" src={ukLogo} alt="ukLogo" />

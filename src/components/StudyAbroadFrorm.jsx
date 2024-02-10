@@ -10,18 +10,29 @@ import { Button } from "./Button";
 import { COUNTRIES, COURSES, FORM_OPTIONS } from "../constants";
 import { useState } from "react";
 import { Input } from "./Input";
+import { MyModal } from "./OtpModal";
 
 export const StudyAbroadForm = ({ formState, setFormState }) => {
   let optionClass = "mx-4 g-3 mt-4 row";
   const [selectedWidgetIndex, setSelectedWidgetIndex] = useState(1);
+  const [showModal, setShowModal] = useState(false);
   const handleCLick = (back) => {
-    if (formState >= 0 && formState < FORM_OPTIONS.length) {
-      setFormState(back === true ? --formState : ++formState);
+    if (back == true) {
+      setFormState(--formState);
+    } else {
+      if (formState === FORM_OPTIONS.length) {
+        setShowModal(true);
+      } else {
+        setFormState(++formState);
+      }
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+  };
+  const handleClose = () => {
+    setShowModal(false);
   };
 
   return (
@@ -102,7 +113,7 @@ export const StudyAbroadForm = ({ formState, setFormState }) => {
               className="mt-5 d-flex flex-column gap-3"
               onSubmit={handleSubmit}
             >
-              <Input label="Name" type="text" />
+              <Input autoFocus="true" label="Name" type="text" />
               <Input label="Email" type="email" />
               <Input label="Phone Number" type="number" />
             </form>
@@ -135,6 +146,7 @@ export const StudyAbroadForm = ({ formState, setFormState }) => {
           ></Button>
         </div>
       </div>
+      <MyModal show={showModal} handleClose={handleClose} />
     </div>
   );
 };

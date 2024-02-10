@@ -69,7 +69,7 @@
 }
 
 .app-t {
-  background: -webkit-linear-gradient(#eee, #f36525);
+  background: -webkit-linear-gradient(#d66732, rgba(11, 27, 69, 1) 73%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -77,4 +77,28 @@
 .light-button:hover {
   border: 2px solid #f36525 !important;
   color: #f36525 !important;
+}
+
+.modal.fade .modal-dialog {
+  transition: transform 0.8s ease-out !important;
+  transform: translate(0, 200%);
+}
+
+.modal-content {
+  height: 350px;
+}
+
+.modal-dialog{
+  margin: 0;
+}
+
+.modal.show .modal-dialog {
+  transform: translate(0, 100%);
+}
+
+.optInput {
+  height: 40px;
+  width: 40px;
+  border: 2px solid lightgray;
+  border-radius: 2px;
 }

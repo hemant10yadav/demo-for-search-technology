@@ -7,6 +7,14 @@ import {
   faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
 
+import phdIcon from "./assets/img/icons8-phd-64.png";
+import btech from "./assets/img/btech.png";
+import mba from "./assets/img/mba.png";
+import bca from "./assets/img/bca.png";
+import Mtech from "./assets/img/mtech.png";
+import msc from "./assets/img/msc.png";
+import ba from "./assets/img/ba.png";
+
 export const WhatToGetWidgetData = [
   {
     title: "Study Abroad Roadmap",
@@ -66,24 +74,31 @@ export const COUNTRIES = [
 export const COURSES = [
   {
     name: "MBA",
+    image: mba,
   },
   {
     name: "BTECH",
+    image: btech,
   },
   {
     name: "MTECH",
+    image: Mtech,
   },
   {
     name: "BSC",
+    image: bca,
   },
   {
     name: "PHD",
+    image: phdIcon,
   },
   {
     name: "MSC",
+    image: msc,
   },
   {
     name: "BA",
+    image: ba,
   },
 ];
 
