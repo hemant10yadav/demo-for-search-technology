@@ -1,0 +1,29 @@
+.progress-box {
+  height: 100px;
+}
+
+.perfect-circle {
+  position: absolute;
+  top: 50%;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 3px dotted #f36525;
+  background-color: white;
+}
+
+hr {
+  border-top: 3px dashed #f36525;
+}
+
+.right-center {
+  right: -10%;
+}
+
+.left-center {
+  left: -10%;
+}
+
+.fs-12 {
+    font-size: 12px;
+}

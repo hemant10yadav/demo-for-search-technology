@@ -1,0 +1,12 @@
+button {
+  height: 55px;
+  width: 160px;
+}
+
+.btn-box {
+  scroll-snap-align: center;
+}
+
+.active {
+    scale: 1.2;
+}

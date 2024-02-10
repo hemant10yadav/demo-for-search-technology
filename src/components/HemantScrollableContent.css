@@ -1,0 +1,11 @@
+.scrollDiv {
+  height: 226px;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-snap-type: y mandatory;
+}
+
+.scrollDiv::-webkit-scrollbar {
+  display: none;
+}
