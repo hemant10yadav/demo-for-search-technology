@@ -1,3 +1,4 @@
+import "./Button.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Button = ({

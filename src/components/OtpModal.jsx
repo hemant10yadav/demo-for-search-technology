@@ -1,6 +1,7 @@
-import { Button, Modal, ModalFooter } from "react-bootstrap";
+import "./OtpModal.css";
+import { Modal } from "react-bootstrap";
 import illustration from "../assets/img/bubble-gum-otp-verification.gif";
-import CountdownTimer from "./CountDown";
+import CountdownTimer from "./shared/CountDown";
 
 export function MyModal({ show, handleClose }) {
   return (

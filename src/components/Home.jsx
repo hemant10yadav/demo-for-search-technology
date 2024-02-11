@@ -1,4 +1,4 @@
-import { Button } from "./Button";
+import { Button } from "./shared/Button";
 import ukLogo from "../assets/img/uk.png";
 import { WhatToGetWidgetData } from "../constants";
 import { WhatToGetWidget } from "./WhatToGetWidget";
@@ -9,7 +9,7 @@ export const Home = () => {
     <div className="bg-light">
       <div className="pb-5">
         <section className="mx-2 pt-3 mb-4">
-          <h1 className="app-t fw-bolder ts-2">
+          <h1 className="gradient-text fw-bolder ts-2">
             <span>Take the first step towards your Masters in Uk</span>
             <img className="ms-2" height="40" src={ukLogo} alt="ukLogo" />
           </h1>

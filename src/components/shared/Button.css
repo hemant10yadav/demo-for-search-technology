@@ -1,0 +1,12 @@
+.light-button:hover {
+  border: 2px solid #f36525 !important;
+  color: #f36525 !important;
+}
+
+.gradient {
+  background: linear-gradient(to right, #ee9928, #e5822a, #d66732);
+}
+
+.app-btn {
+    height: 47px;
+  }

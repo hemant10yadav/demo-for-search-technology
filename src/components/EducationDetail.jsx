@@ -1,8 +1,7 @@
 import { useState } from "react";
-import "./EducationDetail.css";
 import { ProgressBar } from "./ProgressBar";
-import { StudyAbroadForm } from "./StudyAbroadFrorm";
 import { FORM_OPTIONS } from "../constants";
+import { StudyAbroadForm } from "./StudyAbroadForm";
 export const EducationDetail = () => {
   const [formState, setFormState] = useState(0);
 

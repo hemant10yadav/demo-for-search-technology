@@ -1,14 +1,14 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { FormWidget } from "./FormWidget";
-import "./HemantScrollableContent.css";
+import "./VerticalScrollableTabsByHemant.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
-export const HemantScrollableContent = ({
+export const VerticalScrollableTabsByHemant = ({
   widgetData,
   selectedWidgetIndex,
   setSelectedWidgetIndex,
-  handleCLick
+  handleCLick,
 }) => {
   const scrollDivRef = useRef(null);
 

@@ -1,23 +1,18 @@
-import {
-  faArrowLeft,
-  faArrowRight,
-  faCloudSun,
-  faHandsClapping,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCloudSun, faHandsClapping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { HemantScrollableContent } from "./HemantScrollableContent";
-import { Button } from "./Button";
+import { VerticalScrollableTabsByHemant } from "./VerticalScrollableTabsByHemant";
 import { COUNTRIES, COURSES, FORM_OPTIONS } from "../constants";
 import { useState } from "react";
-import { Input } from "./Input";
+import { Input } from "./shared/Input";
 import { MyModal } from "./OtpModal";
+import { StudyAbroadOptions } from "./StudyAbroadOptions";
+import { StudyAbroadFormFooter } from "./StudyAbroadFormFooter";
 
 export const StudyAbroadForm = ({ formState, setFormState }) => {
-  let optionClass = "mx-4 g-3 mt-4 row";
   const [selectedWidgetIndex, setSelectedWidgetIndex] = useState(1);
   const [showModal, setShowModal] = useState(false);
   const handleCLick = (back) => {
-    if (back == true) {
+    if (back === true) {
       setFormState(--formState);
     } else {
       if (formState === FORM_OPTIONS.length) {
@@ -67,7 +62,7 @@ export const StudyAbroadForm = ({ formState, setFormState }) => {
             )}
 
             <div className="mt-5">
-              <HemantScrollableContent
+              <VerticalScrollableTabsByHemant
                 selectedWidgetIndex={selectedWidgetIndex}
                 setSelectedWidgetIndex={setSelectedWidgetIndex}
                 widgetData={formState === 0 ? COUNTRIES : COURSES}
@@ -79,28 +74,10 @@ export const StudyAbroadForm = ({ formState, setFormState }) => {
 
         {[2, 3, 4, 5, 6].includes(formState) && (
           <div style={{ minHeight: "430px" }}>
-            <p className="text-center mx-3 mt-4">
-              {FORM_OPTIONS[formState].title}
-            </p>
-            <div
-              className={
-                formState === 5
-                  ? optionClass + " row-cols-1"
-                  : optionClass + " row-cols-2"
-              }
-            >
-              {FORM_OPTIONS[formState].options.map((opt) => (
-                <div key={opt.title} className="col">
-                  <Button
-                    handleCLick={handleCLick}
-                    title={opt.title}
-                    icon={opt?.icon}
-                    light={true}
-                    centerElements={formState !== 5}
-                  />
-                </div>
-              ))}
-            </div>
+            <StudyAbroadOptions
+              formState={formState}
+              handleCLick={handleCLick}
+            />
           </div>
         )}
 
@@ -120,32 +97,7 @@ export const StudyAbroadForm = ({ formState, setFormState }) => {
           </div>
         )}
       </div>
-
-      <div className="d-flex gap-5 mt-5 align-items-center px-3">
-        {formState > 0 && (
-          <div
-            className="d-flex gap-3 align-items-center cursor-pointer"
-            onClick={() => handleCLick(true)}
-          >
-            <FontAwesomeIcon className="fs-3" icon={faArrowLeft} />
-            <span className="fw-bold">Back</span>
-          </div>
-        )}
-
-        <div className="flex-grow-1">
-          <Button
-            title={
-              [2, 3, 5].includes(formState)
-                ? "Next"
-                : formState === FORM_OPTIONS.length
-                ? "Start Journey"
-                : "Continue"
-            }
-            handleCLick={() => handleCLick(false)}
-            icon={faArrowRight}
-          ></Button>
-        </div>
-      </div>
+      <StudyAbroadFormFooter formState={formState} handleCLick={handleCLick} />
       <MyModal show={showModal} handleClose={handleClose} />
     </div>
   );
