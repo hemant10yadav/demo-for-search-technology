@@ -23,7 +23,7 @@ export const Home = () => {
           <div className="row g-4 m-0 justify-content-center ">
             {WhatToGetWidgetData.map((obj) => (
               <div
-                className="col-12 col-sm-8 col-md-6 col-xl-4"
+                className="col-12 col-sm-10 col-md-6 col-xl-4"
                 key={obj.title}
               >
                 <WhatToGetWidget widgetData={obj}></WhatToGetWidget>
