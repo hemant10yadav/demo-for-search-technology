@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,800;1,800&display=swap");
 
 * {
   font-family: "Open Sans", sans-serif;
@@ -65,4 +66,6 @@
   background: -webkit-linear-gradient(#d66732, rgba(11, 27, 69, 1) 73%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  font-size: 2.5rem;
 }

@@ -5,7 +5,9 @@ export const StudyAbroadOptions = ({ formState, handleCLick }) => {
   let optionClass = "mx-4 g-3 mt-4 row";
   return (
     <div>
-      <p className="text-center mx-3 mt-4">{FORM_OPTIONS[formState].title}</p>
+      <p className="text-center mx-3 mt-4 fw-bold">
+        {FORM_OPTIONS[formState].title}
+      </p>
       <div
         className={
           formState === 5
